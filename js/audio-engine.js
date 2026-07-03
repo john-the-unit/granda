@@ -14,6 +14,7 @@ export class GrandaAudioEngine {
     this.dryGain = null;
     this.wetGain = null;
     this.masterGain = null;
+    this.analyser = null;
 
     this.isPlaying = false;
     this.startTime = 0;
@@ -57,7 +58,15 @@ export class GrandaAudioEngine {
     this.masterGain = this.ctx.createGain();
     this.masterGain.gain.value = 1;
 
+    this.analyser = this.ctx.createAnalyser();
+    this.analyser.fftSize = 256;
+    this.analyser.smoothingTimeConstant = 0.75;
+
     this._updateMix(this.params.mix.value);
+  }
+
+  getAnalyser() {
+    return this.analyser;
   }
 
   _updateMix(wet) {
@@ -101,7 +110,8 @@ export class GrandaAudioEngine {
 
     this.dryGain.connect(this.masterGain);
     this.wetGain.connect(this.masterGain);
-    this.masterGain.connect(this.ctx.destination);
+    this.masterGain.connect(this.analyser);
+    this.analyser.connect(this.ctx.destination);
   }
 
   play() {

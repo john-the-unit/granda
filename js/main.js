@@ -1,8 +1,10 @@
 import { GrandaAudioEngine } from './audio-engine.js';
 import { Knob, freqFormat, mixFormat } from './knob.js';
 import { AudioPlayer } from './player.js';
+import { VUMeter } from './vu-meter.js';
 
 const engine = new GrandaAudioEngine();
+const vuMeter = new VUMeter(document.getElementById('vu-needle'));
 
 const panel = document.getElementById('granda-panel');
 const toggleBypass = document.getElementById('toggle-bypass');
@@ -72,6 +74,11 @@ const player = new AudioPlayer(engine, {
   pauseBtn: document.getElementById('btn-pause'),
   rewindBtn: document.getElementById('btn-rewind'),
   changeBtn: document.getElementById('btn-change'),
+  onPlay: () => {
+    engine.init();
+    vuMeter.connect(engine.getAnalyser());
+  },
+  onPause: () => vuMeter.disconnect(),
 });
 
 document.addEventListener('keydown', (e) => {

@@ -21,6 +21,9 @@ export class AudioPlayer {
     this.rewindBtn = elements.rewindBtn;
     this.changeBtn = elements.changeBtn;
 
+    this.onPlay = elements.onPlay;
+    this.onPause = elements.onPause;
+
     this._raf = null;
     this._seeking = false;
 
@@ -91,6 +94,7 @@ export class AudioPlayer {
     this._showPlayState(true);
     this.statusEl.textContent = 'Playing';
     this._tick();
+    this.onPlay?.();
   }
 
   _pause() {
@@ -98,6 +102,7 @@ export class AudioPlayer {
     this._showPlayState(false);
     this.statusEl.textContent = 'Paused';
     cancelAnimationFrame(this._raf);
+    this.onPause?.();
   }
 
   _showPlayState(playing) {
@@ -112,6 +117,7 @@ export class AudioPlayer {
     this.progressFill.style.width = '0%';
     this.currentTimeEl.textContent = '0:00';
     cancelAnimationFrame(this._raf);
+    this.onPause?.();
   }
 
   _tick() {

@@ -11,9 +11,33 @@
   <!-- ── GRANDA Plugin Panel ─────────────────────────── -->
   <section class="granda-panel" id="granda-panel" aria-label="GRANDA audio plugin">
 
+    <span class="granda-panel__screw granda-panel__screw--tl" aria-hidden="true"></span>
+    <span class="granda-panel__screw granda-panel__screw--tr" aria-hidden="true"></span>
+    <span class="granda-panel__screw granda-panel__screw--bl" aria-hidden="true"></span>
+    <span class="granda-panel__screw granda-panel__screw--br" aria-hidden="true"></span>
+
     <header class="granda-header">
       <h1 class="granda-title"><span>G</span>RANDA</h1>
+      <span class="granda-badge">Filter</span>
     </header>
+
+    <!-- VU Meter -->
+    <div class="vu-meter" aria-hidden="true">
+      <div class="vu-meter__label">Output</div>
+      <div class="vu-meter__face">
+        <div class="vu-meter__zones">
+          <div class="vu-meter__zone"></div>
+          <div class="vu-meter__zone"></div>
+          <div class="vu-meter__zone"></div>
+          <div class="vu-meter__zone vu-meter__zone--hot"></div>
+        </div>
+        <div class="vu-meter__scale">
+          <span>-20</span><span>-10</span><span>0</span><span>+6</span>
+        </div>
+        <div class="vu-meter__needle" id="vu-needle"></div>
+        <div class="vu-meter__needle-pivot"></div>
+      </div>
+    </div>
 
     <!-- A/B Bypass & ON/OFF switches -->
     <div class="switches-row">
