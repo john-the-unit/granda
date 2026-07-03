@@ -669,10 +669,38 @@ body::after {
   font-size: 1.25rem;
 }
 
+.transport__btn--pause {
+  width: 48px;
+  height: 48px;
+  font-size: 1.1rem;
+}
+
 .transport__btn--play.is-playing {
   color: var(--granda-accent);
   border-color: rgba(0, 212, 255, 0.4);
   box-shadow: var(--neu-inner-sm), 0 0 18px var(--granda-accent-glow);
+}
+
+.transport__btn--pause:not(:disabled) {
+  color: var(--granda-accent);
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow: var(--neu-outer-sm), 0 0 12px var(--granda-accent-glow);
+}
+
+.transport__btn--pause:not(:disabled):hover {
+  box-shadow: var(--neu-outer-sm), 0 0 16px var(--granda-accent-glow);
+}
+
+.transport__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: var(--neu-inner-sm);
+}
+
+.transport__btn:disabled:hover {
+  color: var(--granda-text);
+  border-color: var(--granda-glass-border);
+  box-shadow: var(--neu-inner-sm);
 }
 
 .transport__btn:focus-visible {

@@ -106,9 +106,10 @@ export class AudioPlayer {
   }
 
   _showPlayState(playing) {
-    this.playBtn.classList.toggle('hidden', playing);
-    this.pauseBtn.classList.toggle('hidden', !playing);
+    this.playBtn.disabled = playing;
+    this.pauseBtn.disabled = !playing;
     this.playBtn.classList.toggle('is-playing', playing);
+    this.pauseBtn.classList.toggle('is-paused', !playing);
   }
 
   _onTrackEnded() {
