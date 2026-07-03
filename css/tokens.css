@@ -1,0 +1,50 @@
+/**
+ * GRANDA Design Tokens
+ * ────────────────────
+ * Edit these variables to reshape the entire plugin aesthetic.
+ * Point Cursor at this file when you want to change the art style.
+ */
+
+:root {
+  /* ── Palette (Dark Mode) ─────────────────────────────── */
+  --granda-bg:           #1a1d24;
+  --granda-surface:      #22262f;
+  --granda-surface-raised: #2a2f3a;
+  --granda-text:         #e8ecf4;
+  --granda-text-muted:   #8b95a8;
+  --granda-accent:       #5ec4e8;   /* Frutiger cyan glow */
+  --granda-accent-dim:   #3a8fad;
+  --granda-accent-glow:  rgba(94, 196, 232, 0.35);
+
+  /* ── Neumorphic Shadows ──────────────────────────────── */
+  --neu-shadow-dark:     #111318;
+  --neu-shadow-light:    #353b48;
+  --neu-outer:           8px 8px 16px var(--neu-shadow-dark),
+                         -6px -6px 14px var(--neu-shadow-light);
+  --neu-inner:           inset 6px 6px 12px var(--neu-shadow-dark),
+                         inset -4px -4px 10px var(--neu-shadow-light);
+  --neu-outer-sm:        4px 4px 8px var(--neu-shadow-dark),
+                         -3px -3px 7px var(--neu-shadow-light);
+  --neu-inner-sm:        inset 3px 3px 6px var(--neu-shadow-dark),
+                         inset -2px -2px 5px var(--neu-shadow-light);
+
+  /* ── Typography (Frutiger-inspired) ──────────────────── */
+  --font-display:  "Segoe UI", "Frutiger", "Frutiger Linotype",
+                   "Open Sans", "Helvetica Neue", sans-serif;
+  --font-weight-thin:   200;
+  --font-weight-normal: 400;
+  --font-weight-bold:   700;
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --panel-radius:    28px;
+  --knob-lg:         96px;
+  --knob-sm:         64px;
+  --switch-width:    52px;
+  --switch-height:   26px;
+
+  /* ── Player ──────────────────────────────────────────── */
+  --player-bg:       #1e2229;
+  --progress-track:  #2e3440;
+  --progress-fill:   var(--granda-accent);
+  --progress-glow:   var(--granda-accent-glow);
+}

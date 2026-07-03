@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRANDA — Lo/Hi-Pass Filter Plugin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ── GRANDA Plugin Panel ─────────────────────────── -->
+  <section class="granda-panel" id="granda-panel" aria-label="GRANDA audio plugin">
+
+    <header class="granda-header">
+      <h1 class="granda-title"><span>G</span>RANDA</h1>
+    </header>
+
+    <!-- A/B Bypass & ON/OFF switches -->
+    <div class="switches-row">
+      <div class="switch-group">
+        <button
+          class="pill-toggle"
+          id="toggle-bypass"
+          aria-label="A/B Bypass comparison"
+          aria-pressed="false"
+          title="Toggle between preset A and B for comparison"
+        ></button>
+        <span class="switch-label">A/B</span>
+      </div>
+      <div class="switch-group">
+        <button
+          class="pill-toggle active"
+          id="toggle-power"
+          aria-label="Plugin power"
+          aria-pressed="true"
+          title="Enable or disable the plugin"
+        ></button>
+        <span class="switch-label">ON/OFF</span>
+      </div>
+    </div>
+
+    <!-- Filter & Mix knobs -->
+    <div class="knobs-row">
+      <div class="knob-group">
+        <div class="knob knob--lg" id="knob-lowpass" role="slider"
+             aria-label="Low-pass filter frequency" aria-valuemin="200"
+             aria-valuemax="20000" tabindex="0"></div>
+        <span class="knob-label">Lo-Pass</span>
+      </div>
+
+      <div class="knob-group">
+        <div class="knob knob--sm" id="knob-mix" role="slider"
+             aria-label="Dry/Wet mix" aria-valuemin="0"
+             aria-valuemax="100" tabindex="0"></div>
+        <span class="knob-label">Mix</span>
+      </div>
+
+      <div class="knob-group">
+        <div class="knob knob--lg" id="knob-highpass" role="slider"
+             aria-label="High-pass filter frequency" aria-valuemin="20"
+             aria-valuemax="8000" tabindex="0"></div>
+        <span class="knob-label">Hi-Pass</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Audio Player ──────────────────────────────────── -->
+  <section class="player-section" aria-label="Audio player">
+
+    <!-- Idle: drag & drop -->
+    <div class="drop-zone" id="drop-zone">
+      <div class="drop-zone__icon" aria-hidden="true">♫</div>
+      <p class="drop-zone__text">Drag &amp; Drop Audio</p>
+      <p class="drop-zone__hint">or click to browse — MP3, WAV, FLAC, OGG</p>
+      <input type="file" id="file-input" accept="audio/*" class="hidden" />
+    </div>
+
+    <!-- Active: music player -->
+    <div class="player" id="player">
+      <div class="player__track-info">
+        <div class="player__artwork" aria-hidden="true">♪</div>
+        <div class="player__meta">
+          <div class="player__filename" id="player-filename">—</div>
+          <div class="player__status" id="player-status">Ready</div>
+        </div>
+      </div>
+
+      <div class="progress-bar" id="progress-bar" role="slider"
+           aria-label="Playback position" tabindex="0">
+        <div class="progress-bar__fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-bar__times">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <div class="transport">
+        <button class="transport__btn" id="btn-rewind" aria-label="Rewind" title="Rewind">⏮</button>
+        <button class="transport__btn transport__btn--play" id="btn-play" aria-label="Play" title="Play">▶</button>
+        <button class="transport__btn transport__btn--play hidden" id="btn-pause" aria-label="Pause" title="Pause">⏸</button>
+        <button class="transport__btn transport__btn--text" id="btn-change" title="Change audio file">Change</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
