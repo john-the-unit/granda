@@ -1,0 +1,63 @@
+/**
+ * GRANDA Design Tokens — Frutiger Aero Dark
+ * Edit these variables to reshape the entire plugin aesthetic.
+ */
+
+:root {
+  /* ── Palette (Dark Mode) ─────────────────────────────── */
+  --granda-bg:             #0d1117;
+  --granda-bg-orb-1:       rgba(0, 212, 255, 0.08);
+  --granda-bg-orb-2:       rgba(94, 120, 255, 0.06);
+  --granda-surface:        #161b24;
+  --granda-surface-raised: #1e2530;
+  --granda-glass:          rgba(255, 255, 255, 0.04);
+  --granda-glass-border:   rgba(255, 255, 255, 0.08);
+  --granda-glass-shine:    rgba(255, 255, 255, 0.12);
+  --granda-text:           #eef2f8;
+  --granda-text-muted:     #7d8a9e;
+  --granda-accent:         #00d4ff;
+  --granda-accent-bright:  #7ee8ff;
+  --granda-accent-dim:     #0099bb;
+  --granda-accent-glow:    rgba(0, 212, 255, 0.45);
+  --granda-accent-soft:    rgba(0, 212, 255, 0.12);
+
+  /* ── Neumorphic Shadows (bluer tint) ─────────────────── */
+  --neu-shadow-dark:       #080a0f;
+  --neu-shadow-light:      #2a3344;
+  --neu-outer:             10px 10px 22px var(--neu-shadow-dark),
+                           -8px -8px 18px var(--neu-shadow-light);
+  --neu-inner:             inset 7px 7px 14px var(--neu-shadow-dark),
+                           inset -5px -5px 12px var(--neu-shadow-light);
+  --neu-outer-sm:          5px 5px 10px var(--neu-shadow-dark),
+                           -4px -4px 9px var(--neu-shadow-light);
+  --neu-inner-sm:          inset 4px 4px 8px var(--neu-shadow-dark),
+                           inset -3px -3px 7px var(--neu-shadow-light);
+  --neu-glow:              0 0 24px var(--granda-accent-glow);
+
+  /* ── Typography (Frutiger-inspired) ──────────────────── */
+  --font-display:    "Segoe UI", "Frutiger", "Frutiger Linotype",
+                     "Candara", "Open Sans", "Helvetica Neue", sans-serif;
+  --font-weight-thin:   200;
+  --font-weight-normal: 400;
+  --font-weight-bold:   700;
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --panel-radius:    32px;
+  --knob-lg:         100px;
+  --knob-sm:         68px;
+  --switch-width:    54px;
+  --switch-height:   28px;
+
+  /* ── Player ──────────────────────────────────────────── */
+  --player-bg:       #131820;
+  --progress-track:  #1c2330;
+  --progress-fill:   var(--granda-accent);
+  --progress-glow:   var(--granda-accent-glow);
+
+  /* ── VU Meter ────────────────────────────────────────── */
+  --vu-bg:           #0a0e14;
+  --vu-scale:        #4a5568;
+  --vu-needle:       #00d4ff;
+  --vu-zone-safe:    rgba(0, 212, 255, 0.15);
+  --vu-zone-hot:     rgba(255, 90, 60, 0.2);
+}
